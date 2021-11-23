@@ -4,15 +4,29 @@
 // 1. Compute the exponent of a number (using recursion);
 // 8^2 = 8 x 8 = 64
 
-const exponentRecursion = (number, exponent) =>
-  exponent <= 1 ? number : number * exponentRecursion(number, exponent - 1);
+const exponentRecursion = (number, exponent) => {
+  const positiveExponent = Math.abs(exponent);
+  const result =
+    positiveExponent <= 1
+      ? number
+      : number * exponentRecursion(number, positiveExponent - 1);
+
+  if (exponent >= 0) {
+    return result;
+  } else {
+    return 1 / result;
+  }
+};
 
 console.log(exponentRecursion(5, 0)); // 5
 console.log(exponentRecursion(5, 1)); // 5
 console.log(exponentRecursion(2, 3)); // 8
 console.log(exponentRecursion(3, 3)); // 27
 console.log(exponentRecursion(3, 4)); // 81
-console.log(exponentRecursion(8, 2)); // 16
+console.log(exponentRecursion(8, 2)); // 64
+console.log(exponentRecursion(2, -2)); // 0.25
+console.log(exponentRecursion(2, -1)); // 0.5
+console.log(exponentRecursion(8, -1)); // 0.125
 
 //
 // 2. Write functions min and max that will find min and max number in array using apply
