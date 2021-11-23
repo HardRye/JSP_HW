@@ -12,7 +12,7 @@ console.log(exponentRecursion(5, 1)); // 5
 console.log(exponentRecursion(2, 3)); // 8
 console.log(exponentRecursion(3, 3)); // 27
 console.log(exponentRecursion(3, 4)); // 81
-console.log(exponentRecursion(8, 2)); // 16
+console.log(exponentRecursion(8, 2)); // 64
 
 //
 // 2. Write functions min and max that will find min and max number in array using apply
